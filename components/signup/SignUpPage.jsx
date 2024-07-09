@@ -162,6 +162,7 @@ const SignUpPage = () => {
         onChange={(e) => setUser({ ...user, confirmPassword: e.target.value })}
       />
       </label>
+      <p className="text-sm text-start text-green-600">Password must contain 8 letters with atleast 1 number and 1 letter</p>
       {isLoading ? (
         <SfLoaderCircular className="items-center"/>
       ) : (

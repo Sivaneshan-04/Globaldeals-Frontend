@@ -7,7 +7,7 @@ export const logoutHandler = async() => {
         const token = await JSON.parse(cookies().get("Token").value);
         const resp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/v1/auth/logout`,{refreshToken:token.refresh.token});
         
-        if(resp.status === 200){
+        if(resp){
             cookies().delete("User");
             cookies().delete("Token");
         }
